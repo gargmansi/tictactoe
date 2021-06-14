@@ -48,8 +48,15 @@ const current = history[currentMove];
       handleSquareClick={handleSquareClick}
       winningsquares={winningsquares}
       />
-      <button type="button" onClick={onNewGame}>start new game</button>
+      <button 
+      type="button" 
+      onClick={onNewGame}
+      className={`btn-reset ${winner ? `active` : ``}`} >
+        start new game
+        </button>
+        <h2 style={{fontWeight: 'normal'}}> current game history</h2>
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
+      <div className="bg-balls"/>
     </div>
   );
 };

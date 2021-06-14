@@ -13,8 +13,14 @@ const StatusMessage = ({ winner, current }) => {
          }
     {!winner && 
     !noMovesLeft &&
-    `Next player is ${ current.isXNext ? `x` : `0`}`}
-    {!winner && noMovesLeft && 'X and 0 tied' }
+    <>
+    Next player is <span className={current.isXNext ? `text-green` : `text-orange` }>
+         
+        { current.isXNext ? `x` : `0`}{' '}
+        </span>
+</>
+}
+   {!winner && noMovesLeft && 'X and 0 tied'}
  
     </div>);
 };
